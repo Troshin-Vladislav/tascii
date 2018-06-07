@@ -10,7 +10,7 @@ INSTALL:
 
 or
 
-	$ g++ tascii.o -o tascii
+	$ g++ tascii.cpp -o tascii
 
 SYNTAX:
 --------
@@ -25,7 +25,7 @@ end - end code for table ascii
 FORMAT:
 --------
 
-[dec]( [hex] ): [char]
+dec(hex): char
 
 	40(28): (
 	41(29): )
