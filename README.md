@@ -65,7 +65,7 @@ dec(hex): char
 
 INLINE:
 
-[ hex ]( dec )'char'
+\[hex\]\(dec\)'char'
 
 	[3C]'<' [3D]'=' [3E]'>' [3F]'?' [40]'@' 
 	[41]'A' [42]'B' [43]'C' [44]'D' [45]'E'
