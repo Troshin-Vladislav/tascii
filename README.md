@@ -15,15 +15,45 @@ or
 SYNTAX:
 --------
 
-	$ tascii
+	$ tascii [options]
 
-	$ tascii <first> <end>
+OPTIONS:
+--------
 
-first - first code for table ascii
-end - end code for table ascii
+
+**--start <int>, -s <int>:** 
+
+start code char
+
+**--finish <int>, -f <int>:** 
+
+finish code char
+
+**--bound <int>, -b <int>:** 
+
+specified count char outputing on console (default = 10)
+
+**--inline, -i:** 
+
+inline mode - all char will print in line, and bound specified parameters --bound
+
+**--hex, -h:** 
+
+view char code in heximal digits
+
+**--dec, -d:** 
+
+view char code in decimal digits
+
+**--help, -h:** 
+
+print help page and exit
+
 
 FORMAT:
 --------
+
+ORIGIN:
 
 dec(hex): char
 
@@ -33,14 +63,25 @@ dec(hex): char
 	43(2B): +
 	44(2C): ,
 
+INLINE:
+
+[ hex ]( dec )'char'
+
+	[3C]'<' [3D]'=' [3E]'>' [3F]'?' [40]'@' 
+	[41]'A' [42]'B' [43]'C' [44]'D' [45]'E'
+
+
 EXAMPLES:
 ---------
 
-see all table ascii:
+show all table ascii:
 
 	$ ./tascii
 
-start from 50 and finished 60 code by table ascii
+show ascii symbols start of 60 and finished 120 
 
-	$ ./tascii 50 60
+	$ ./tascii --start 60 --finish 120
 
+show table start of 60 and finished 70 char code, view heximal digits with bound 5 times
+
+	$ ./tascii --inline -s 60 -f 70 --hex --bound 5

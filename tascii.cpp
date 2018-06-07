@@ -187,8 +187,8 @@ void help(){
 	// help messages
 	std::cout << "  --start <int>, -s:\t\t" 	<< "code for start" 			<< std::endl;
 	std::cout << "  --finish <int>, -f:\t\t" 	<< "code for finish" 			<< std::endl;
-	std::cout << "  --bound <int>, -b:\t\t" 	<< "bound print inline mode" 	<< std::endl;
-	std::cout << "  --inline, -i:\t\t\t" 			<< "inline mode print" 			<< std::endl;
+	std::cout << "  --bound <int>, -b:\t\t" 	<< "count char outputing on console" 	<< std::endl;
+	std::cout << "  --inline, -i:\t\t\t" 		<< "inline mode print" 			<< std::endl;
 	std::cout << "  --hex, -H:\t\t\t" 			<< "print heximal code"		 	<< std::endl;
 	std::cout << "  --dec, -D:\t\t\t" 			<< "print decimal code"		 	<< std::endl;
 	std::cout << "  --help, -h:\t\t\t" 			<< "print help page and exit" 	<< std::endl;
