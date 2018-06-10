@@ -159,7 +159,40 @@ void line_ascii(Limit lim, Option opt){
 		if( opt.hex ) printf("[%X]", ch);
 		if( opt.dec ) printf("(%.3i)", ch);
 
-		printf("'%c' ", ch);
+
+		switch( ch ){
+			case '\0':
+				printf("'\\0' ");
+				break;
+			case '\a':
+				printf("'\\a' ");
+				break;
+			case '\t':
+				printf("'\\t' ");
+				break;
+			case '\n':
+				printf("'\\n' ");
+				break;
+			case '\v':
+				printf("'\\v' ");
+				break;
+			case '\r':
+				printf("'\\r' ");
+				break;
+			case 0xC:
+				printf("'\\x0C' ");
+				break;
+			case 0xE:
+				printf("'\\x0E' ");
+				break;
+			case 0xF:
+				printf("'\\x0F' ");
+				break;
+			default:
+				printf("'%c' ", ch);
+		}
+
+		// printf("'%c' ", ch);
 
 		cntout++;
 		
@@ -173,7 +206,40 @@ void line_ascii(Limit lim, Option opt){
  */
 void show_tascii(Limit lim){
 	for(unsigned short int ch = lim.getBegin(); ch < lim.getEnd() ; ch++){
-		printf("%i(%X): %c\n", ch, ch, ch);
+
+		switch( ch ){
+			case '\0':
+				printf("%i(%X): \\0\n", ch, ch);
+				break;
+			case '\a':
+				printf("%i(%X): \\a\n", ch, ch);
+				break;
+			case '\t':
+				printf("%i(%X): \\t\n", ch, ch);
+				break;
+			case '\n':
+				printf("%i(%X): \\n\n", ch, ch);
+				break;
+			case '\v':
+				printf("%i(%X): \\v\n", ch, ch);
+				break;
+			case '\r':
+				printf("%i(%X): \\r\n", ch, ch);
+				break;
+			case 0xC:
+				printf("%i(%X): \\x0C\n", ch, ch);
+				break;
+			case 0xE:
+				printf("%i(%X): \\x0E\n", ch, ch);
+				break;
+			case 0xF:
+				printf("%i(%X): \\x0F\n", ch, ch);
+				break;
+			default:
+				printf("%i(%X): %c\n", ch, ch, ch);
+		}
+
+
 	}
 }
 
@@ -185,13 +251,13 @@ void help(){
 	std::cout << "usage: tascii [options]" << std::endl;
 
 	// help messages
-	std::cout << "  --start <int>, -s:\t\t" 	<< "code for start" 			<< std::endl;
-	std::cout << "  --finish <int>, -f:\t\t" 	<< "code for finish" 			<< std::endl;
-	std::cout << "  --bound <int>, -b:\t\t" 	<< "count char outputing on console" 	<< std::endl;
-	std::cout << "  --inline, -i:\t\t\t" 		<< "inline mode print" 			<< std::endl;
-	std::cout << "  --hex, -H:\t\t\t" 			<< "print heximal code"		 	<< std::endl;
-	std::cout << "  --dec, -D:\t\t\t" 			<< "print decimal code"		 	<< std::endl;
-	std::cout << "  --help, -h:\t\t\t" 			<< "print help page and exit" 	<< std::endl;
+	std::cout << "  --start <int>,  -s <int>:\t" 	<< "code for start" 					<< std::endl;
+	std::cout << "  --finish <int>,  -f <int>:\t" 	<< "code for finish" 					<< std::endl;
+	std::cout << "  --bound <int>,  -b <int>:\t" 	<< "count char outputing on console" 	<< std::endl;
+	std::cout << "  --inline,  -i:\t\t" 			<< "inline mode print" 					<< std::endl;
+	std::cout << "  --hex,  -H:\t\t\t" 				<< "print heximal code"		 			<< std::endl;
+	std::cout << "  --dec,  -D:\t\t\t" 				<< "print decimal code"		 			<< std::endl;
+	std::cout << "  --help,  -h:\t\t\t" 			<< "print help page and exit" 			<< std::endl;
 	
 	exit(0);
 }
